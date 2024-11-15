@@ -7,13 +7,23 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// Dark Mode Toggle
-const toggleSwitch = document.querySelector('#dark-mode-toggle');
-const body = document.body;
-
-toggleSwitch.addEventListener('change', () => {
-    body.classList.toggle('dark-mode');
-});
+// Dark Mode Toggle with localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleSwitch = document.querySelector('#dark-mode-toggle');
+    const body = document.body;
+  
+    // Load saved theme from localStorage or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.classList.toggle('dark-mode', savedTheme === 'dark');
+    toggleSwitch.checked = savedTheme === 'dark';
+  
+    // Add event listener for theme toggle
+    toggleSwitch.addEventListener('change', () => {
+      const isDarkMode = toggleSwitch.checked;
+      body.classList.toggle('dark-mode', isDarkMode);
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+  });
 
 // Initialize AOS
 AOS.init({
