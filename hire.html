@@ -39,8 +39,8 @@
         </div>
     </nav>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Hire-Me Contact Section -->
+    <section id="hire">
         <h2 data-aos="fade-up">Hire me</h2>
         <p data-aos="fade-up" data-aos-delay="100">I'm available for freelance and project-based work. Please fill out the form below with as much detail as possible.</p>
     </p>
@@ -58,19 +58,25 @@
                 <option value="backend">Back-End Development</option>
                 <option value="fullstack">Full-Stack Development</option>
             </select>
-        
+
+        <div class = "field-group">
             <label for="budget">Budget</label>
             <input type="text" id="budget" name="budget" placeholder="Your Project Budget (optional)">
-        
+        </div>
+
+        <div class = "field-group">
             <label for="timeline">Timeline</label>
             <input type="date" id="timeline" name="timeline">
-        
+        </div>
+
             <label for="description">Project Description *</label>
             <textarea id="description" name="description" required placeholder="Tell me about your project..."></textarea>
         
+
             <label for="attachments">Attach Files</label>
             <input type="file" id="attachments" name="attachments" accept=".pdf,.doc,.docx,.png,.jpg">
         
+
             <label for="contactMethod">Preferred Contact Method</label>
             <select id="contactMethod" name="contactMethod">
                 <option value="email">Email</option>
@@ -81,6 +87,13 @@
             <button type="submit">Submit</button>
         </form>
     </section>
+    
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>Thank you for your inquiry! I will get back to you shortly.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -93,8 +106,10 @@
 
     <!-- JavaScript Libraries -->
     <!-- AOS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Main JavaScript File -->
     <script src="JS/main.js"></script>
+
 </body>
 </html>

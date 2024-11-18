@@ -479,3 +479,195 @@ footer .social-icons a:hover {
         display: flex;
     }
 }
+/* Hire Me Section */
+#hire {
+    position: relative;
+    padding: 80px 20px;
+    background-image: url('../Images/hire-background.jpg'); /* Add a relevant background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+#hire::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 32, 32, 0.8); /* Dark overlay */
+}
+
+#hire h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#hire p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+#hire form {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+#hire label {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+}
+
+#hire input,
+#hire textarea,
+#hire select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 1em;
+}
+
+#hire input::placeholder,
+#hire textarea::placeholder {
+    color: #666;
+}
+
+#hire input:focus,
+#hire textarea:focus,
+#hire select:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+#hire button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#hire button:hover {
+    background-color: #c07800;
+}
+
+#hire input[type="file"] {
+    padding: 5px;
+    background-color: transparent;
+    color: #fff;
+}
+
+#hire input[type="file"]::file-selector-button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#hire input[type="file"]::file-selector-button:hover {
+    background-color: #c07800;
+}
+
+/* Form Progress Bar */
+.form-progress-bar {
+    width: 0%;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: width 0.3s;
+    border-radius: 5px;
+}
+
+/* Error State */
+#hire input.error,
+#hire textarea.error,
+#hire select.error {
+    border: 2px solid red;
+}
+
+#hire input.error:focus,
+#hire textarea.error:focus,
+#hire select.error:focus {
+    outline: none;
+    box-shadow: 0 0 10px red;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #hire h2 {
+        font-size: 2.5em;
+    }
+
+    #hire form {
+        padding: 20px;
+    }
+}
+/* Hide Conditional Fields */
+.field-group {
+    display: none;
+}
+
+/* Class to Show Fields */
+.field-group.show {
+    display: block;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
