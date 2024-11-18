@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danny Ambrose - Contact</title>
+    <meta name="description" content="Contact Danny Ambrose - Aspiring Software Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type ="images/x-icon" href="./Images/favicon.ico" >
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- AOS Library for scroll animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+</head>
+<body class="contact-page">
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle"></label>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Danny Ambrose</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="hire.html" class="active">Hire Me</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 data-aos="fade-up">Hire me</h2>
+        <p data-aos="fade-up" data-aos-delay="100">I'm available for freelance and project-based work. Please fill out the form below with as much detail as possible.</p>
+    </p>
+        <form id="hireMeForm" action="https://formspree.io/f/mnnqzjvg" method="POST" data-aos="fade-up" data-aos-delay="200">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your Full Name">
+        
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email Address">
+        
+            <label for="projectType">Project Type *</label>
+            <select id="projectType" name="projectType" required>
+                <option value="">Select a Project Type</option>
+                <option value="frontend">Front-End Development</option>
+                <option value="backend">Back-End Development</option>
+                <option value="fullstack">Full-Stack Development</option>
+            </select>
+        
+            <label for="budget">Budget</label>
+            <input type="text" id="budget" name="budget" placeholder="Your Project Budget (optional)">
+        
+            <label for="timeline">Timeline</label>
+            <input type="date" id="timeline" name="timeline">
+        
+            <label for="description">Project Description *</label>
+            <textarea id="description" name="description" required placeholder="Tell me about your project..."></textarea>
+        
+            <label for="attachments">Attach Files</label>
+            <input type="file" id="attachments" name="attachments" accept=".pdf,.doc,.docx,.png,.jpg">
+        
+            <label for="contactMethod">Preferred Contact Method</label>
+            <select id="contactMethod" name="contactMethod">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="video">Video Call</option>
+            </select>
+        
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Danny Ambrose</p>
+        <div class="social-icons">
+            <a href="https://github.com/MarDanJoe1" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/ambrosedanny" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Main JavaScript File -->
+    <script src="JS/main.js"></script>
+</body>
+</html>

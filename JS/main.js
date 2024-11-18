@@ -54,3 +54,18 @@ function animateSkills() {
 }
 
 window.addEventListener('load', animateSkills);
+document.getElementById('hireMeForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const projectType = document.getElementById('projectType').value;
+
+    if (!name || !email || !projectType) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    alert('Thank you for your inquiry! I will get back to you shortly.');
+    this.reset();
+});
