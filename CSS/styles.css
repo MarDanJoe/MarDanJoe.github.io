@@ -21,6 +21,9 @@ body {
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 /* Navigation Bar */
 nav {
@@ -170,9 +173,47 @@ nav ul li a.active {
     border-radius: 50px;
 }
 
+.btn::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    transition: transform 0.4s;
+    transform: skewX(-45deg);
+    z-index: -1;
+}
+
+.btn:hover::after {
+    left: 0;
+    transform: skewX(0deg);
+}
+
+
 .btn:hover {
     background-color: #c07800;
 }
+
+/*NO animation Button */
+.btn-no-animation {
+    position: relative; /* Ensure positioning doesn't interfere */
+    overflow: hidden;   /* Same as other buttons for consistency */
+   
+}
+
+
+.btn-no-animation::after {
+    content: none;
+}
+
+
+.btn-no-animation:hover {
+    color: inherit; /* Prevent color change on hover */
+    background-color: var(--primary-color); /* Or set to a specific color */
+}
+
 
 /* Scroll Indicator */
 .scroll-indicator {
@@ -254,32 +295,78 @@ nav ul li a.active {
 }
 /* About Me Section */
 #about {
-    padding: 50px 20px;
-    text-align: center;
+    background-image: url('Images/cleveland.jpg'); /* background image */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding: 100px 20px;
+    color: #fff;
 }
-
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 32, 32, 0.8); /* Dark overlay */
+    z-index: -1;
+}
 #about h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
 }
 
 .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
+     position: relative;
+      z-index: 2;
+    
 }
 
 .about-content img {
-    width: 300px;
-    border-radius: 50%;
+    flex: 1 1 300px; /* Allow the image to grow and shrink */
+    max-width: 300px;
     margin: 20px;
 }
 
+.about-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
 .about-text {
-    max-width: 600px;
+    flex: 2 1 500px; /* Adjust based on desired text width */
     margin: 20px;
     text-align: left;
+}
+.about-text h3 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    color: var(--primary-color);
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.about-text ul li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
 }
 
 /* Skills Section */
@@ -293,6 +380,8 @@ nav ul li a.active {
 
 .skill-bar span {
     font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .progress-bar {
@@ -309,6 +398,54 @@ nav ul li a.active {
     border-radius: 10px;
     transition: width 0.5s;
 }
+skill-bar:hover .progress {
+    background: #c07800;
+}
+
+/* Call-to-Action Section */
+#call-to-action {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+#call-to-action h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+#call-to-action p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#call-to-action .btn {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+#call-to-action .btn:hover {
+    background-color: #c07800;
+}
+
+#call-to-action .btn i {
+    margin-left: 10px;
+}
+
+
 
 /* Projects Section */
 #projects {
@@ -478,6 +615,18 @@ footer .social-icons a:hover {
     .hamburger {
         display: flex;
     }
+    #call-to-action h2 {
+        font-size: 2em;
+    }
+
+    #call-to-action p {
+        font-size: 1em;
+    }
+
+    #call-to-action .btn {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
 }
 /* Hire Me Section */
 #hire {
@@ -625,6 +774,20 @@ footer .social-icons a:hover {
 
     #hire form {
         padding: 20px;
+    }
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .about-text {
+        text-align: center;
     }
 }
 /* Hide Conditional Fields */

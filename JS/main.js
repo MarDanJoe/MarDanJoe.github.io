@@ -7,7 +7,29 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// Wrap DOM-dependent code inside DOMContentLoaded
+// Scrollspy
+const sections = document.querySelectorAll('section');
+const navLi = document.querySelectorAll('nav ul li a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLi.forEach(li => {
+        li.classList.remove('active');
+        if (li.getAttribute('href').includes(current)) {
+            li.classList.add('active');
+        }
+    });
+});
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Dark Mode Toggle with localStorage
     const toggleSwitch = document.querySelector('#dark-mode-toggle');
@@ -42,16 +64,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Skill Bars Animation
     const skillBars = document.querySelectorAll('.skill-bar');
 
-    function animateSkills() {
-        skillBars.forEach(skill => {
-            const progress = skill.querySelector('.progress');
-            const width = progress.style.width;
-            progress.style.width = '0%';
-            setTimeout(() => {
-                progress.style.width = width;
-            }, 100);
+    const options = {
+        threshold: 0.5
+    };
+
+    const animateSkillBar = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progress = entry.target.querySelector('.progress');
+                const width = progress.getAttribute('data-skill-level');
+                progress.style.width = width + '%';
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
         });
-    }
+    };
+
+    const observer = new IntersectionObserver(animateSkillBar, options);
+
+    skillBars.forEach(skillBar => {
+        observer.observe(skillBar);
+        const progress = skillBar.querySelector('.progress');
+        progress.style.width = '0%'; // Reset initial width
+        progress.setAttribute('data-skill-level', progress.style.width); // Store the skill level
+    });
+
+
+
+
+
+
 
     window.addEventListener('load', animateSkills);
 
