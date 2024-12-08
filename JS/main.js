@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
   
     // Load saved theme from localStorage or default to light mode
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     body.classList.toggle('dark-mode', savedTheme === 'dark');
-    toggleSwitch.checked = savedTheme === 'dark';
+    toggleSwitch.checked = savedTheme === 'light';
   
     // Add event listener for theme toggle
     toggleSwitch.addEventListener('change', () => {
-        const isDarkMode = toggleSwitch.checked;
+        const isDarkMode = !toggleSwitch.checked;
         body.classList.toggle('dark-mode', isDarkMode);
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
