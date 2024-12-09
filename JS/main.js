@@ -177,3 +177,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }); 
 
+// Initialize Feather Icons
+document.addEventListener('DOMContentLoaded', () => {
+    feather.replace();
+
+    // Add intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe all animated elements
+    document.querySelectorAll('.about-content-column > *').forEach(el => {
+        observer.observe(el);
+    });
+});
+

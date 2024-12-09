@@ -1,0 +1,168 @@
+@keyframes aboutFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content-column > * {
+    animation: aboutFadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.about-header-section {
+    animation-delay: 0.2s;
+}
+
+.about-text-content {
+    animation-delay: 0.4s;
+}
+
+.about-skills-container {
+    animation-delay: 0.6s;
+}
+
+.about-portrait-wrapper {
+    animation: aboutFadeIn 0.8s ease-out forwards;
+}
+:root {
+    --about-primary-color: #4f46e5;
+    --about-primary-light: #eef2ff;
+    --about-text-dark: #1f2937;
+    --about-text-light: #4b5563;
+    --about-background: #f9fafb;
+    --about-white: #ffffff;
+}
+
+.about-page-container {
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom, var(--about-background), var(--about-white));
+}
+
+.about-page-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.about-image-column {
+    position: relative;
+}
+
+.about-portrait-wrapper {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-portrait-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.about-portrait-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.about-portrait-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-portrait-wrapper:hover .about-portrait-overlay {
+    opacity: 1;
+}
+
+.about-social-links {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.about-portrait-wrapper:hover .about-social-links {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-social-link {
+    background: var(--about-white);
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--about-text-dark);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.about-social-link:hover {
+    background-color: var(--about-primary-light);
+}
+
+.about-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-header-section .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--about-text-dark);
+}
+
+.about-role {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--about-text-light);
+}
+
+.about-text-content p {
+    margin-bottom: 1.5rem;
+    color: var(--about-text-light);
+}
+
+.about-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.about-skill-tag {
+    background: var(--about-primary-light);
+    color: var(--about-primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+    .about-page-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}

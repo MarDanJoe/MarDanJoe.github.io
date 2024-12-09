@@ -9,6 +9,7 @@
     <link rel="icon" href="/Images/favicon.ico" type="image/x-icon">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <!-- AOS Library for scroll animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <!-- Font Awesome for icons -->
@@ -19,6 +20,7 @@
     <div class="theme-toggle">
         <input type="checkbox" id="dark-mode-toggle">
         <label for="dark-mode-toggle"></label>
+        <span class="decoration"></span>
     </div>
 
 
@@ -42,12 +44,34 @@
 
     <!-- About Me Section -->
     <section id="about">
-        <h2 data-aos="fade-up">About Me</h2>
-        <div class="about-content">
-            <div class="about-image" data-aos="fade-right">
-                <img src="Images/Danny-4.jpg" alt="Danny Ambrose">
-            </div>
+        
+        <div class="about-content-column">
+            <div class="about-page-grid">
+                <!-- Image Column -->
+                <div class="about-image-column">
+                    <div class="about-portrait-wrapper">
+                        <img 
+                            src="/Images/Dannypic1.jpg" 
+                            alt="Portrait" 
+                            class="about-portrait-image"
+                        >
+                        <div class="about-portrait-overlay"></div>
+                        <div class="about-social-links">
+                            <a href="#" class="about-social-link" aria-label="GitHub">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="#" class="about-social-link" aria-label="LinkedIn">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="about-social-link" aria-label="Email">
+                                <i data-feather="mail"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
             <div class="about-text" data-aos="fade-left">
+                <h2 data-aos="fade-up">About Me</h2>
                 <p>
                     Hello! I'm <strong>Danny Ambrose</strong>, a passionate and resourceful software developer currently completing Tech Elevator’s Full-Stack Developer bootcamp, graduating in December 2024. At Tech Elevator, I’ve gained experience in Java, Spring Boot, SQL, and Vue.js, with a strong emphasis on building full-stack applications that solve real-world problems.
                 
@@ -67,29 +91,15 @@
                 <br>
                 • Agile Methodologies: Applying Scrum principles to deliver projects iteratively and effectively.
 
-               
+            </div>   
                 </p>
-                <p>
-                    With this strong foundation in both technical and practical skills, I’ve applied my knowledge to create a diverse portfolio of innovative and impactful projects that showcase my ability to tackle complex challenges, implement creative solutions, and deliver high-quality results tailored to user needs. These projects include:
-                </ul> <br> 
-                    <br>
-                <h3>Project Highlights</h3>
-                <ul><br>
-                • IsabelleAI: A cutting-edge vehicle diagnostics AI and tool that uses DIMO APIs to deliver real-time, actionable insights for drivers, enhancing both safety and convenience.
-                 <br>
-                • Mail-Hub: A secure email service designed with privacy at its core, developed using Spring Boot and Vue.js for a seamless user experience.
-                 <br>
-                • TEnmo: A banking application facilitating virtual currency transfers with secure client-server architecture and robust data management.
-                 <br>
-                • Games: Developed interactive and engaging games such as CarCrazy, 3D Racer, and Dungeon of Horrors, showcasing creativity and technical versatility.
-
-                </ul>
-                </p>
+                
                 <p>
                     my journey into software development has been shaped by experiences in workshops, hackathons, and leadership roles at Hyland Software, where I explored web design, blockchain prototypes, and more. These opportunities have instilled in me a passion for problem-solving and innovation, while my diverse background in customer-facing roles has strengthened my ability to understand and address client needs effectively.
                     <br>
                 With a commitment to excellence, a team-first mindset, and the technical expertise to deliver impactful solutions, I am excited to contribute to meaningful projects and drive innovation in the tech industry.
                 </p>
+        </div>
                   
                 <!-- Skills Section -->
                 <h3>Technical Skills</h3>
@@ -122,8 +132,8 @@
                     
                     <!-- Add more skills as needed -->
                 </div>
-            </div>
-        </div>
+            
+        
     </section>  
     <!-- Call-to-Action Section -->
 <section id="call-to-action">
